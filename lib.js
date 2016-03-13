@@ -9,6 +9,7 @@ if (Meteor.isServer) {
     fileSaver.saveFile = function(blob, file, encoding, user) {
 
     };
+    fileSaver.acceptableFiles = ["image/jpg", "image/gif", "image/jpeg", "image/jpg", "image/JPG", "image/pjpeg", "image/x-png", "image/png"];
     fileSaver.File = function(unique_id, creator, filePath, file) {
         this._id = unique_id;
         this.creator = creator;
@@ -43,6 +44,8 @@ if (Meteor.isServer) {
     }
     Meteor.methods({
         fileSaver_saveFile: function(blob, file, encoding){
+            if (fileSaver.acceptableFiles.indexOf(file.type) === -1)
+                throw new Meteor.Error(500, "invalid file");
             var user = Meteor.userId();
             if (typeof(fileSaver.path) !== "string")
                 throw new Meteor.Error(500, "invalid file");
