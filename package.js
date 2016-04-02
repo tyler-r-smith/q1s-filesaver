@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'uploadfiles',
+  name: 'tylerrsmith:filesaver',
   version: '0.0.1',
   // Brief, one-line summary of the package.
   summary: 'A wrapper for tomi Meteor upload to allow for multiple forms',
@@ -17,10 +17,11 @@ Package.onUse(function(api) {
   api.use("mongo");
   api.use("jquery");
   api.use("iron:router");
-  api.addFiles("lib.js");
+  api.use("random");
+  api.use("server-to-client");
+  api.addFiles("client.js");
   api.addFiles("server.js");
-  api.export("fileSaver", ["client", "server"]);
-
+  api.mainModule("lib.js");
 });
 
 Package.onTest(function(api) {
@@ -29,7 +30,5 @@ Package.onTest(function(api) {
   api.use(["templating", "underscore"]);
   api.use("mongo");
   api.use("iron:router");
-  api.use("tomi:upload-server");
-  api.use("tomi:upload-jquery");
   api.addFiles("server.js");
 });
