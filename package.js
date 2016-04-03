@@ -1,10 +1,10 @@
 Package.describe({
-  name: 'tylerrsmith:filesaver',
+  name: 'q1s:filesaver',
   version: '0.0.1',
   // Brief, one-line summary of the package.
   summary: 'A wrapper for tomi Meteor upload to allow for multiple forms',
   // URL to the Git repository containing the source code for this package.
-  git: '',
+  git: 'https://github.com/tyler-r-smith/q1s-filesaver',
   // By default, Meteor will default to using README.md for documentation.
   // To avoid submitting documentation, set this field to null.
   documentation: 'README.md'
@@ -18,7 +18,7 @@ Package.onUse(function(api) {
   api.use("jquery");
   api.use("iron:router");
   api.use("random");
-  api.use("server-to-client");
+  api.use("q1s:server-to-client");
   api.addFiles("client.js");
   api.addFiles("server.js");
   api.mainModule("lib.js");

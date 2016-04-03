@@ -18,6 +18,8 @@ Client Side
     </form>
 </Template>
 ```
+
+
 ```js
 Meteor.upload_images.events({_
     "submit form": function(e){
