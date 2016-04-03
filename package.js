@@ -11,14 +11,14 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.2.1');
+  api.versionsFrom('1.3');
   api.use('ecmascript');
   api.use(["templating", "underscore"]);
   api.use("mongo");
   api.use("jquery");
-  api.use("iron:router");
+  api.use("iron:router@1.0.0");
   api.use("random");
-  api.use("q1s:server-to-client");
+  api.use("q1s:server-to-client@0.0.0");
   api.addFiles("client.js");
   api.addFiles("server.js");
   api.mainModule("lib.js");
